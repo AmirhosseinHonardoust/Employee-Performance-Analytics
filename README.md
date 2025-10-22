@@ -12,7 +12,10 @@ This project demonstrates how to:
 - Use **Python** for data analysis and visualization
 - Deliver **data-driven HR insights** in an end-to-end workflow
 
-### Objectives
+---
+
+## Objectives
+
 - Compute **department-level performance indicators**
 - Assess **employee efficiency and attendance**
 - Visualize **relationships between workload, tasks, and ratings**
