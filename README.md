@@ -1,7 +1,7 @@
 # Employee Performance Analytics (SQL + Python)
 
 Analyze employee performance and departmental productivity using **SQL (SQLite)** for KPI aggregation and **Python** for analytics and visualization.  
-This project transforms HR data into **actionable business insights** — identifying high performers, efficiency trends, and departmental KPIs.
+This project transforms HR data into **actionable business insights**, identifying high performers, efficiency trends, and departmental KPIs.
 
 ---
 
