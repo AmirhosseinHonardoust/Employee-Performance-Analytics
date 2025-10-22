@@ -1,0 +1,61 @@
+employee_id,name,department,role,tasks_total,hours_total,avg_rating,projects_total,absences_total,tasks_per_hour
+E1008,Emp_008,Support,Agent,650,417.9,3.31,30,4,1.56
+E1011,Emp_011,Support,Agent,657,430.4,3.38,33,3,1.53
+E1048,Emp_048,Support,Agent,655,429.53,3.35,29,3,1.52
+E1019,Emp_019,Support,Team Lead,665,444.57,3.39,40,3,1.5
+E1056,Emp_056,Support,Agent,678,457.38,3.45,36,1,1.48
+E1015,Emp_015,Sales,Account Manager,509,392.16,3.26,31,6,1.3
+E1050,Emp_050,Sales,AE,542,416.14,3.43,34,4,1.3
+E1054,Emp_054,Sales,AE,580,446.58,3.46,39,1,1.3
+E1027,Emp_027,Sales,Account Manager,538,417.34,3.39,37,3,1.29
+E1017,Emp_017,Sales,SDR,539,424.64,3.29,39,4,1.27
+E1039,Emp_039,Sales,AE,546,440.18,3.36,32,3,1.24
+E1012,Emp_012,Sales,Account Manager,524,425.55,3.35,40,4,1.23
+E1053,Emp_053,Sales,Account Manager,536,435.52,3.5,38,1,1.23
+E1026,Emp_026,Sales,SDR,560,457.91,3.53,36,1,1.22
+E1046,Emp_046,Sales,SDR,537,441.05,3.54,33,1,1.22
+E1010,Emp_010,Sales,SDR,512,434.64,3.27,39,5,1.18
+E1004,Emp_004,Engineering,QA Eng,440,425.93,3.97,84,2,1.03
+E1016,Emp_016,Engineering,Backend Dev,432,423.05,3.94,92,3,1.02
+E1040,Emp_040,Engineering,Data Eng,463,453.04,4.09,79,1,1.02
+E1041,Emp_041,Engineering,QA Eng,429,424.68,4.06,85,2,1.01
+E1036,Emp_036,Engineering,Backend Dev,392,390.68,3.65,102,7,1.0
+E1005,Emp_005,Engineering,Backend Dev,431,436.29,4.14,89,2,0.99
+E1028,Emp_028,Engineering,Frontend Dev,417,421.1,3.61,89,5,0.99
+E1058,Emp_058,Engineering,QA Eng,418,425.45,3.96,87,2,0.98
+E1042,Emp_042,Engineering,Backend Dev,421,435.95,4.0,101,2,0.97
+E1055,Emp_055,Engineering,Backend Dev,430,441.16,3.89,90,3,0.97
+E1002,Emp_002,Engineering,Data Eng,409,432.56,3.93,91,2,0.95
+E1003,Emp_003,Marketing,Content,391,426.4,3.66,87,3,0.92
+E1020,Emp_020,Engineering,QA Eng,401,435.38,3.87,90,4,0.92
+E1000,Emp_000,Marketing,SEO,352,389.5,3.66,87,5,0.9
+E1007,Emp_007,Marketing,Designer,381,425.42,3.72,87,2,0.9
+E1021,Emp_021,Engineering,Backend Dev,421,473.99,3.98,82,1,0.89
+E1022,Emp_022,Marketing,SEO,381,426.38,3.83,93,2,0.89
+E1038,Emp_038,Marketing,SEO,353,406.98,3.81,88,2,0.87
+E1006,Emp_006,Marketing,Content,360,418.18,3.5,78,4,0.86
+E1047,Emp_047,Marketing,Content,363,420.87,3.72,85,2,0.86
+E1030,Emp_030,Marketing,Content,374,442.65,3.73,97,1,0.84
+E1018,Emp_018,Marketing,SEO,344,429.52,3.58,90,4,0.8
+E1029,Emp_029,HR,HRBP,361,448.48,3.59,29,1,0.8
+E1044,Emp_044,Finance,Accountant,350,435.36,3.97,41,1,0.8
+E1045,Emp_045,HR,HRBP,309,395.08,3.34,25,6,0.78
+E1052,Emp_052,HR,Recruiter,315,409.46,3.55,31,4,0.77
+E1001,Emp_001,HR,HRBP,330,442.25,3.66,43,0,0.75
+E1014,Emp_014,Finance,Accountant,313,417.58,3.66,35,4,0.75
+E1032,Emp_032,HR,Recruiter,330,441.96,3.73,29,1,0.75
+E1034,Emp_034,Finance,Analyst,336,446.02,3.81,33,2,0.75
+E1035,Emp_035,Finance,Accountant,319,422.98,3.77,36,2,0.75
+E1024,Emp_024,Finance,Analyst,310,419.34,3.63,35,4,0.74
+E1051,Emp_051,Finance,Accountant,323,434.08,3.83,32,2,0.74
+E1025,Emp_025,HR,HRBP,314,427.37,3.62,36,1,0.73
+E1037,Emp_037,Finance,Accountant,311,427.96,3.92,25,2,0.73
+E1033,Emp_033,Finance,Accountant,317,438.21,3.91,37,3,0.72
+E1023,Emp_023,HR,HRBP,304,426.3,3.51,35,3,0.71
+E1059,Emp_059,HR,HRBP,321,450.02,3.5,41,2,0.71
+E1031,Emp_031,HR,HRBP,303,432.74,3.52,36,3,0.7
+E1049,Emp_049,HR,Recruiter,317,453.16,3.63,38,1,0.7
+E1009,Emp_009,Finance,Analyst,299,435.21,3.76,40,3,0.69
+E1013,Emp_013,HR,Recruiter,286,427.14,3.43,35,4,0.67
+E1043,Emp_043,Finance,Accountant,270,410.99,3.67,34,3,0.66
+E1057,Emp_057,HR,Recruiter,290,439.91,3.56,33,2,0.66

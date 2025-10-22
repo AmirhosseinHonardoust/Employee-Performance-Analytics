@@ -1,0 +1,7 @@
+department,avg_rating,avg_tasks,total_hours,total_tasks,absence_rate
+Engineering,3.93,7.06,5619.26,5504,0.0462
+Finance,3.79,5.25,4287.73,3148,0.0433
+Marketing,3.69,6.11,3785.9,3299,0.0463
+HR,3.55,5.25,5193.87,3780,0.0389
+Sales,3.4,8.97,4731.71,5923,0.05
+Support,3.37,11.02,2179.78,3305,0.0467
