@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Union
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
-PathLike = Union[str, Path]
+PathLike = str | Path
 
 
 def ensure_outdir(path: PathLike) -> Path:
@@ -39,9 +38,7 @@ def plot_bar(df: pd.DataFrame, x: str, y: str, title: str, out_path: PathLike) -
     return out
 
 
-def plot_scatter(
-    df: pd.DataFrame, x: str, y: str, title: str, out_path: PathLike
-) -> Path:
+def plot_scatter(df: pd.DataFrame, x: str, y: str, title: str, out_path: PathLike) -> Path:
     """Simple scatter plot (Matplotlib defaults)."""
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.scatter(df[x], df[y])
