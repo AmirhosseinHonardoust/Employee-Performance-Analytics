@@ -1,6 +1,7 @@
 <div align="center">
 
 # Employee Performance Analytics
+<img width="1672" height="941" alt="Employee-Performance-Analytics" src="https://github.com/user-attachments/assets/e474de1f-e4a1-4911-ace0-83c0eaf94d65" />
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![pandas](https://img.shields.io/badge/pandas-Data%20Wrangling-orange)
