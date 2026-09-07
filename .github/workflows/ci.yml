@@ -32,10 +32,16 @@ jobs:
       - name: Mypy (type check)
         run: mypy src/
 
-      - name: Pytest
-        run: pytest tests/ -v
+      - name: Pytest (with coverage)
+        run: pytest tests/ -v --cov=src --cov-report=term-missing
 
       - name: Run end-to-end pipeline smoke test
         run: |
           python src/create_db.py --csv data/employees.csv --db hr.db
           python src/analyze_performance.py --db hr.db --sql src/queries.sql --outdir outputs_ci
+
+      - name: pip-audit (advisory, non-blocking)
+        continue-on-error: true
+        run: |
+          pip install pip-audit
+          pip-audit
