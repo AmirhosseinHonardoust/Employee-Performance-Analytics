@@ -1,11 +1,29 @@
 from __future__ import annotations
 
+import logging
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
 PathLike = str | Path
+
+_DIST_NAME = "employee-performance-analytics"
+
+
+def get_version() -> str:
+    """Return the installed package version, or 'unknown' if not installed."""
+    try:
+        return version(_DIST_NAME)
+    except PackageNotFoundError:  # pragma: no cover - only hit outside an install
+        return "unknown"
+
+
+def configure_logging() -> logging.Logger:
+    """Configure a plain, message-only logger shared by the CLI entry points."""
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
+    return logging.getLogger("employee_performance_analytics")
 
 
 def ensure_outdir(path: PathLike) -> Path:

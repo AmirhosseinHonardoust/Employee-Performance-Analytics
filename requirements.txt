@@ -1,2 +1,4 @@
-pandas>=2.0,<3.0
-matplotlib>=3.7,<4.0
+# Dependency versions are declared once, in pyproject.toml, to avoid drift.
+# This file exists for `pip install -r requirements.txt` compatibility and
+# installs the package (with its pinned deps) in editable mode.
+-e .

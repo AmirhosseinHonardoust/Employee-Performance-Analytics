@@ -46,7 +46,12 @@ SELECT
   END AS tasks_per_hour
 FROM employees;
 
--- Final SELECTs consumed by analyze_performance.py
+-- The three SELECTs below are for ad-hoc use only (e.g. running this file
+-- directly via the `sqlite3` CLI to eyeball results). analyze_performance.py
+-- runs this whole script with sqlite3.executescript(), which creates the
+-- views above but discards SELECT results, then queries each view itself
+-- via separate pd.read_sql_query() calls. Keep the views' column names and
+-- semantics in sync with those calls if you edit this file.
 SELECT * FROM department_kpis ORDER BY avg_rating DESC;
 SELECT * FROM employee_summary ORDER BY tasks_per_hour DESC;
 SELECT * FROM daily_productivity;

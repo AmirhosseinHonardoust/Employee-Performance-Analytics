@@ -135,8 +135,11 @@ source .venv/bin/activate
 ```
 
 ### Install Dependencies
+Dependency versions are declared once, in `pyproject.toml`. Either of these works:
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt   # installs the package in editable mode
+# or
+pip install -e .
 ```
 
 ### Load Data into SQLite
@@ -161,13 +164,17 @@ Useful flags on `analyze_performance.py`:
 - `--no-charts` — skip PNG generation and only write the summary CSVs (faster
   for CI or quick checks).
 
+Both scripts also accept `--version`, and their path defaults can be set via
+environment variables: `EMP_DB_PATH` (default `hr.db`) and `EMP_OUTDIR`
+(default `outputs`, `analyze_performance.py` only).
+
 ### Running Tests and the Quality Gate
 ```bash
 pip install -e ".[dev]"
 ruff check src/ tests/
 black --check src/ tests/
 mypy src/
-pytest tests/
+pytest tests/ --cov=src --cov-report=term-missing
 ```
 
 ---
