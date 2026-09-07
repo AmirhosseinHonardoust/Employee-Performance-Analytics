@@ -331,10 +331,11 @@ A failing row raises a `ValueError` with a specific message (e.g. `"CSV has 'rat
 <summary>Additional chart: task completion rate distribution</summary>
 
 <div align="center">
-
-<img width="600" alt="Task completion rate distribution" src="https://github.com/user-attachments/assets/a4f5dd3b-4179-49e6-a921-6bc75a8083d7" />
-
-Most employees average around 1 task/hour; high performers exceed 1.4 and low performers fall under 0.8, useful for spotting training needs or recognizing excellence.
+        
+| Task Completion Rate Distribution |
+|---|
+| <img width="600" alt="Task completion rate distribution" src="https://github.com/user-attachments/assets/a4f5dd3b-4179-49e6-a921-6bc75a8083d7" /> |
+| Most employees average around 1 task/hour; high performers exceed 1.4 and low performers fall under 0.8, useful for spotting training needs or recognizing excellence. |
 
 </div>
 
