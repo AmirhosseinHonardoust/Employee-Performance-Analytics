@@ -1,5 +1,7 @@
 # Employee Performance Analytics (SQL + Python)
 
+[![CI](https://github.com/AmirhosseinHonardoust/Employee-Performance-Analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/AmirhosseinHonardoust/Employee-Performance-Analytics/actions/workflows/ci.yml)
+
 Analyze employee performance and departmental productivity using **SQL (SQLite)** for KPI aggregation and **Python** for analytics and visualization.  
 This project transforms HR data into **actionable business insights**, identifying high performers, efficiency trends, and departmental KPIs.
 
@@ -148,6 +150,25 @@ python src/analyze_performance.py --db hr.db --sql src/queries.sql --outdir outp
 ```
 
 All CSV reports and charts will be saved in the `outputs/` directory.
+
+The scripts also work as package modules (`python -m src.create_db ...`,
+`python -m src.analyze_performance ...`), which is what the test suite and CI
+exercise indirectly by importing `src`.
+
+Useful flags on `analyze_performance.py`:
+- `--seed <int>` — random seed for the scatter-plot sample (default `42`, for
+  reproducible charts).
+- `--no-charts` — skip PNG generation and only write the summary CSVs (faster
+  for CI or quick checks).
+
+### Running Tests and the Quality Gate
+```bash
+pip install -e ".[dev]"
+ruff check src/ tests/
+black --check src/ tests/
+mypy src/
+pytest tests/
+```
 
 ---
 

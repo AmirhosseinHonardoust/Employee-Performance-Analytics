@@ -22,12 +22,38 @@ CREATE TABLE IF NOT EXISTS employees (
 );
 """
 
+REQUIRED_COLUMNS = [
+    "employee_id",
+    "name",
+    "department",
+    "role",
+    "date",
+    "tasks_completed",
+    "hours_worked",
+    "rating",
+    "projects",
+    "absences",
+]
+
 
 def load_csv_to_db(csv_path: Path, db_path: Path) -> None:
-    """Load employees CSV into a SQLite database."""
-    df = pd.read_csv(csv_path, parse_dates=["date"])
+    """Load employees CSV into a SQLite database.
+
+    Raises:
+        FileNotFoundError: if csv_path does not exist.
+        ValueError: if required columns are missing from the CSV.
+    """
+    if not csv_path.exists():
+        raise FileNotFoundError(f"CSV not found: {csv_path}")
+
+    df = pd.read_csv(csv_path)
+
+    missing = [col for col in REQUIRED_COLUMNS if col not in df.columns]
+    if missing:
+        raise ValueError(f"CSV is missing required columns: {missing}")
+
     # normalize date format for SQLite (TEXT)
-    df["date"] = df["date"].dt.strftime("%Y-%m-%d")
+    df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
 
     with sqlite3.connect(db_path) as con:
         con.execute(SCHEMA_SQL)

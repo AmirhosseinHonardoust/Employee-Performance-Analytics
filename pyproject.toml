@@ -1,0 +1,54 @@
+[project]
+name = "employee-performance-analytics"
+version = "0.1.0"
+description = "SQL + Python employee performance analytics pipeline"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = [
+    "pandas>=2.0,<3.0",
+    "matplotlib>=3.7,<4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6",
+    "black>=24.0",
+    "mypy>=1.10",
+    "pandas-stubs>=2.0",
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "SIM", "UP"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+# Note: python_version is set to 3.12 (not the package's 3.10 floor) only because
+# numpy 2.x's bundled .pyi stubs use PEP 695 syntax that mypy gates on this setting
+# when parsing third-party stubs. Our own source uses no syntax newer than 3.10.
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = false
+warn_unused_ignores = true
+warn_redundant_casts = true
+
+[[tool.mypy.overrides]]
+module = "matplotlib.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
