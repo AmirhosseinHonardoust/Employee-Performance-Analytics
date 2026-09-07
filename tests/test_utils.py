@@ -4,7 +4,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.utils import ensure_outdir, plot_bar, plot_hist, plot_scatter, save_csv
+from src.utils import ensure_outdir, get_version, plot_bar, plot_hist, plot_scatter, save_csv
+
+
+def test_get_version_returns_nonempty_string() -> None:
+    assert isinstance(get_version(), str)
+    assert get_version() != ""
 
 
 def test_ensure_outdir_creates_nested_dirs(tmp_path: Path) -> None:

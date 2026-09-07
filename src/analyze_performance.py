@@ -2,21 +2,35 @@
 from __future__ import annotations
 
 import argparse
+import logging
+import os
 import sqlite3
 from pathlib import Path
 
 import pandas as pd
 
 try:
-    from .utils import ensure_outdir, plot_bar, plot_hist, plot_scatter, save_csv
-except ImportError:  # pragma: no cover - fallback when run as a bare script
-    from utils import (  # type: ignore[import-not-found,no-redef]
+    from .utils import (
+        configure_logging,
         ensure_outdir,
+        get_version,
         plot_bar,
         plot_hist,
         plot_scatter,
         save_csv,
     )
+except ImportError:  # pragma: no cover - fallback when run as a bare script
+    from utils import (  # type: ignore[import-not-found,no-redef]
+        configure_logging,
+        ensure_outdir,
+        get_version,
+        plot_bar,
+        plot_hist,
+        plot_scatter,
+        save_csv,
+    )
+
+logger = logging.getLogger("employee_performance_analytics")
 
 
 def run_analysis(
@@ -60,7 +74,7 @@ def run_analysis(
     save_csv(emp_summary, outdir / "performance_summary.csv")
 
     if not make_charts:
-        print(f"Artifacts saved to: {outdir.resolve()} (charts skipped)")
+        logger.info("Artifacts saved to: %s (charts skipped)", outdir.resolve())
         return
 
     # Charts
@@ -90,14 +104,23 @@ def run_analysis(
             out_path=charts_dir / "task_completion_rate.png",
         )
 
-    print(f"Artifacts saved to: {outdir.resolve()}")
+    logger.info("Artifacts saved to: %s", outdir.resolve())
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Employee performance analytics (SQL + Python)")
-    parser.add_argument("--db", default="hr.db", help="Path to SQLite DB")
+    parser.add_argument("--version", action="version", version=get_version())
+    parser.add_argument(
+        "--db",
+        default=os.environ.get("EMP_DB_PATH", "hr.db"),
+        help="Path to SQLite DB (env: EMP_DB_PATH)",
+    )
     parser.add_argument("--sql", default="src/queries.sql", help="Path to queries.sql")
-    parser.add_argument("--outdir", default="outputs", help="Output directory")
+    parser.add_argument(
+        "--outdir",
+        default=os.environ.get("EMP_OUTDIR", "outputs"),
+        help="Output directory (env: EMP_OUTDIR)",
+    )
     parser.add_argument(
         "--seed",
         type=int,
@@ -113,6 +136,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    configure_logging()
     args = parse_args()
     run_analysis(
         Path(args.db),
